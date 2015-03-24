@@ -7,3 +7,4 @@ This contains the following
 
 * Webserver Dockerfile
 * Database Dockerfile
+* YAML Files
