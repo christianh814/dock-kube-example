@@ -1,0 +1,9 @@
+d: "db-service"
+kind: "Service"
+apiVersion: "v1beta1"
+port: 3306
+portalIP: "10.254.100.1"
+selector:
+  name: "db"
+labels:
+  name: "db"
