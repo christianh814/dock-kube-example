@@ -1,0 +1,23 @@
+id: "webserver-controller"
+kind: "ReplicationController"
+apiVersion: "v1beta1"
+desiredState:
+  replicas: 2
+  replicaSelector:
+    selectorname: "webserver"
+  podTemplate:
+    desiredState:
+      manifest:
+        version: "v1beta1"
+        id: "webserver-controller"
+        containers:
+          - name: "apache-frontend"
+            image: "hub.example.net:5000/webserver"
+            ports:
+              - containerPort: 80
+    labels:
+      name: "webserver"
+      selectorname: "webserver"
+      uses: "db"
+labels: 
+  name: "webserver-controller"
